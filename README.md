@@ -34,7 +34,25 @@ Features are:
 ## Local Setup
 ```bash
 python -m venv .venv
-.\.venv\Scripts\activate
+```
+
+Windows (PowerShell):
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+Windows (cmd):
+```cmd
+.\.venv\Scripts\activate.bat
+```
+
+macOS/Linux:
+```bash
+source .venv/bin/activate
+```
+
+Then:
+```bash
 python -m pip install -r requirements.txt
 python train_model.py
 uvicorn main:app --host 0.0.0.0 --port 8000
@@ -82,7 +100,7 @@ Evidence of HTTPS inference (curl or screenshot): `{"prediction":0.0,"model_vers
 Cold start notes: `Cold start ~9.79s; warm ~0.16s`
 
 ## Cloud Function Deployment
-Place a copy of `model.pkl` in `cloud_function/`.
+`cloud_function/model.pkl` is included in the repo, so no extra copy step is required.
 
 Deploy:
 ```bash
