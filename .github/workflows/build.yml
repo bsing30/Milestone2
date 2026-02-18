@@ -31,7 +31,7 @@ jobs:
           pip install pytest pytest-cov
 
       - name: Run tests
-        run: pytest tests/ -v --tb=short
+        run: PYTHONPATH=. pytest tests/ -v --tb=short
 
   build:
     name: Build and Push
@@ -63,8 +63,9 @@ jobs:
           else
             VERSION="v0.0.0-${{ github.sha }}"
           fi
+          REPO_LOWER=$(echo "${{ github.repository }}" | cut -d'/' -f2 | tr '[:upper:]' '[:lower:]')
           echo "version=$VERSION" >> $GITHUB_OUTPUT
-          echo "tags=${{ env.REGISTRY }}/${{ github.repository_owner }}/milestone1:$VERSION" >> $GITHUB_OUTPUT
+          echo "tags=${{ env.REGISTRY }}/${{ github.repository_owner }}/$REPO_LOWER:$VERSION" >> $GITHUB_OUTPUT
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
