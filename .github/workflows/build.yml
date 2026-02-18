@@ -30,6 +30,9 @@ jobs:
           pip install -r app/requirements.txt
           pip install pytest pytest-cov
 
+      - name: Generate model
+        run: python train_model.py
+
       - name: Run tests
         run: PYTHONPATH=. pytest tests/ -v --tb=short
 
