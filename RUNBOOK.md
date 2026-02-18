@@ -65,7 +65,7 @@ docker images ml-service:test --format "{{.Size}}"
 
 - **Vulnerability scanning:** Use Trivy (optional) to scan images:
   ```bash
-  trivy image ghcr.io/bsing30/milestone1:v1.0.0
+  trivy image ghcr.io/bsing30/milestone2:v1.0.0
   ```
 
 ---
@@ -89,7 +89,7 @@ The `.github/workflows/build.yml` pipeline runs on push to `main`/`master` and o
 - **Extract version:**
   - On tag push (e.g. `v1.0.0`): use that tag
   - On branch push: use `v0.0.0-<short-sha>`
-- **Build and push** image to `ghcr.io/<owner>/milestone1:<version>`
+- **Build and push** image to `ghcr.io/<owner>/milestone2:<version>`
 
 ### Flow Diagram
 ```
@@ -119,7 +119,7 @@ git tag v1.0.1
 git push origin v1.0.1
 ```
 
-Images are tagged as `ghcr.io/bsing30/milestone1:v1.0.0`. Branch pushes use `v0.0.0-<sha>` for dev builds.
+Images are tagged as `ghcr.io/bsing30/milestone2:v1.0.0`. Branch pushes use `v0.0.0-<sha>` for dev builds.
 
 ---
 
