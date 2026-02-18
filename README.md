@@ -1,6 +1,6 @@
 # ML Inference Service - Milestone 2
 
-[![Build, Test, and Publish](https://github.com/bsing30/Milestone1/actions/workflows/build.yml/badge.svg)](https://github.com/bsing30/Milestone1/actions/workflows/build.yml)
+[![Build, Test, and Publish](https://github.com/bsing30/Milestone2/actions/workflows/build.yml/badge.svg)](https://github.com/bsing30/Milestone2/actions/workflows/build.yml)
 
 Containerized ML inference service (Iris classifier) with CI/CD pipeline.
 
@@ -10,10 +10,10 @@ Containerized ML inference service (Iris classifier) with CI/CD pipeline.
 
 ```bash
 # Pull from GitHub Container Registry (replace with your registry if using course registry)
-docker pull ghcr.io/bsing30/milestone1:v1.0.0
+docker pull ghcr.io/bsing30/milestone2:v1.0.0
 
 # Run the container
-docker run -p 8080:8080 ghcr.io/bsing30/milestone1:v1.0.0
+docker run -p 8080:8080 ghcr.io/bsing30/milestone2:v1.0.0
 ```
 
 ### Test the API
@@ -39,8 +39,8 @@ curl -X POST http://localhost:8080/predict \
 
 ```bash
 # Clone the repository
-git clone https://github.com/bsing30/Milestone1.git
-cd Milestone1
+git clone https://github.com/bsing30/Milestone2.git
+cd Milestone2
 
 # Create virtual environment
 python -m venv venv
@@ -95,7 +95,7 @@ docker-compose up --build
 │   └── test_app.py               # Unit tests
 ├── Dockerfile                    # Multi-stage build
 ├── docker-compose.yaml           # Local development
-├── README.md
+├── README.md                     # Project docs
 └── RUNBOOK.md                    # Operations guide
 ```
 
